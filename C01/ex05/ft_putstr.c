@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elfo <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 15:04:47 by egelma-b          #+#    #+#             */
-/*   Updated: 2024/08/12 18:19:54 by elfo             ###   ########.fr       */
+/*   Created: 2024/08/12 20:49:16 by elfo              #+#    #+#             */
+/*   Updated: 2024/08/12 21:40:31 by elfo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_swap(int *a, int *b)
+void	ft_putstr(char *str)
 {
-	int aux;
-
-	aux = *a;
-
-	*a = *b;
-	*b = aux;
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
 }
-
-int	main(void)
+/*int	main(void)
 {
-	int a;
-	int b;
-
-	a = 47;
-	b = 48;
-
-	write(1, &a, 1);
-	write(1, &b, 1);
-	ft_swap(&a, &b);
-	write(1, &a, 1);
-	write(1, &b, 1);
+	char str[] = "hola";
+	ft_putstr(&str[0]);
 	return (0);
-}
+}*/

@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elfo <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 15:04:47 by egelma-b          #+#    #+#             */
-/*   Updated: 2024/08/12 18:19:54 by elfo             ###   ########.fr       */
+/*   Created: 2024/08/12 19:10:15 by elfo              #+#    #+#             */
+/*   Updated: 2024/08/12 20:27:51 by elfo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_swap(int *a, int *b)
+//#include <stdio.h>
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int aux;
+	int	x;
 
-	aux = *a;
-
-	*a = *b;
-	*b = aux;
+	x = *a;
+	*a = *a / *b;
+	*b = x % *b;
 }
-
-int	main(void)
+/*int	main(void)
 {
-	int a;
-	int b;
+	int	a;
+	int	b;
 
-	a = 47;
-	b = 48;
+	a = 4;
+	b = 2;
 
-	write(1, &a, 1);
-	write(1, &b, 1);
-	ft_swap(&a, &b);
-	write(1, &a, 1);
-	write(1, &b, 1);
+	ft_ultimate_div_mod(&a, &b);
+	printf("%d, %d", a, b);
 	return (0);
-}
+}*/
