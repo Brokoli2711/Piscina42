@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 15:04:47 by egelma-b          #+#    #+#             */
-/*   Updated: 2024/08/12 18:19:54 by elfo             ###   ########.fr       */
+/*   Created: 2024/08/15 15:16:02 by egelma-b          #+#    #+#             */
+/*   Updated: 2024/08/15 15:19:55 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_swap(int *a, int *b)
+char	*ft_strcapitalize(char *str)
 {
-	int aux;
-
-	aux = *a;
-
-	*a = *b;
-	*b = aux;
-}
-
-int	main(void)
-{
-	int a;
-	int b;
-
-	a = 47;
-	b = 48;
-
-	write(1, &a, 1);
-	write(1, &b, 1);
-	ft_swap(&a, &b);
-	write(1, &a, 1);
-	write(1, &b, 1);
-	return (0);
+	while(*str != '\0')
+	{
+		
+	}
 }

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elfo <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 21:41:26 by elfo              #+#    #+#             */
-/*   Updated: 2024/08/12 21:59:40 by elfo             ###   ########.fr       */
+/*   Created: 2024/08/15 15:11:25 by egelma-b          #+#    #+#             */
+/*   Updated: 2024/08/15 15:12:46 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
-int	ft_strlen(char *str)
+char	*ft_strlowcase(char *str)
 {
-	int	len;
-
-	len = 0;
-	while (*str)
+	while (*str != '\0')
 	{
-		len++;
+		if (*str >= 'A' && *str <= 'Z')
+			*str += 32;
 		str++;
 	}
-	return (len);
+	return (str);
 }
+
 /*int	main(void)
+
 {
-	char word[] = "jijijija";
-	printf("%d", ft_strlen(word));
+	char	word[] = "hOLa";
+
+	ft_strlowcase(word);
+	printf("%s", word);
 	return (0);
 }*/

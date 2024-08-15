@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 14:37:06 by egelma-b          #+#    #+#             */
-/*   Updated: 2024/08/12 15:04:25 by egelma-b         ###   ########.fr       */
+/*   Created: 2024/08/15 14:46:35 by egelma-b          #+#    #+#             */
+/*   Updated: 2024/08/15 14:56:31 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	ft_ultimate_ft(int *********nbr)
+#include <stdio.h>
+int	ft_str_is_printable(char *str)
 {
-	*********nbr = 42;
+	int	i;
+
+	i = 0;
+	while (str)
+	{
+		if(str[0] == '\0')
+			return (1);
+		if(str[i] < 32 || str[i] > 126)
+			return (0);
+		str++;
+	}
+	return (1);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	int x = 0;
-	int *ptr1 = &x;
-	int **ptr2 = &ptr1;
-	int ***ptr3 = &ptr2;
-	int ****ptr4 = &ptr3;
-	int *****ptr5 = &ptr4;
-	int ******ptr6 = &ptr5;
-	int *******ptr7 = &ptr6;
-	int ********ptr8 = &ptr7;
+	char *hola = "hola";
+	char *notext = "";
 
-	ft_ultimate_ft(&ptr8);
-	write(1, &x, 1);
-}*/
+	printf("%d", ft_str_is_printable(hola));
+	printf("%d", ft_str_is_printable(notext));
+	return (0);
+}
