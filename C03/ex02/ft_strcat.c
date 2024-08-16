@@ -1,37 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 11:55:55 by egelma-b          #+#    #+#             */
-/*   Updated: 2024/08/15 14:28:38 by egelma-b         ###   ########.fr       */
+/*   Created: 2024/08/16 13:22:30 by egelma-b          #+#    #+#             */
+/*   Updated: 2024/08/16 13:24:13 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-int	ft_str_is_uppercase(char *str)
+int	main(int argc, char *argv[])
 {
-	while (str)
-	{
-		if(str[0] == '\0')
-			return (1);
-		if (!((str[0] >= 'A') && (str[0] <= 'Z')))
-			return (0);
-		str++;	
-	}
-	return (1);
-}
-
-int	main(void)
-{
-	char *mayus = "ABCD";
-	char *minus = "aBcD";
-	char *nothing = "";
-
-	printf("%d", ft_str_is_uppercase(minus)); 
-	printf("%d", ft_str_is_uppercase(mayus)); 
-	printf("%d", ft_str_is_uppercase(nothing)); 
+	unsigned int a = (unsigned int)*argv[1];
 	return (0);
 }

@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 11:55:55 by egelma-b          #+#    #+#             */
-/*   Updated: 2024/08/15 13:44:06 by egelma-b         ###   ########.fr       */
+/*   Created: 2024/08/16 12:28:08 by egelma-b          #+#    #+#             */
+/*   Updated: 2024/08/16 12:44:17 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-int	ft_str_is_numeric(char *str)
+#include <string.h>
+
+int	ft_strcmp(char *s1, char *s2)
 {
-	while (str)
+	while (*s1 == *s2++)
 	{
-		if(str[0] == '\0')
-			return (1);
-		if (!((str[0] >= '0') && (str[0] <= '9')))
+		if (*s1++ == '\0')
 			return (0);
-		str++;	
 	}
-	return (1);
+	return (*s1 - *(s2-1));
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	char *numeric = "159";
-	char *nonumeric = "1a";
-	char *nothing = "";
+	if (argc > 3)
+		printf("Introduce 2 values, introduced: %d", argc - 1);
+	if (argc == 3)
+		printf("%d", ft_strcmp(argv[1], argv[2]));
 
-	printf("%d", ft_str_is_numeric(numeric)); 
-	printf("%d", ft_str_is_numeric(nonumeric)); 
-	printf("%d", ft_str_is_numeric(nothing)); 
 	return (0);
 }
