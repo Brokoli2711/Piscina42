@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elfo <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 15:43:39 by elfo              #+#    #+#             */
-/*   Updated: 2024/08/28 12:18:51 by egelma-b         ###   ########.fr       */
+/*   Created: 2024/08/28 13:21:04 by egelma-b          #+#    #+#             */
+/*   Updated: 2024/08/28 14:41:17 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_is_prime(int nb)
+void	switch_str(char *str1, char *str2)
 {
-	int	i;
-
-	i = 1;
-	if (nb <= 1)
-		return (0);
-	while (++i <= nb)
-	{
-		if ((i != nb) && (nb % i == 0))
-			return (0);
-	}
-	return (1);
+	
 }
-/*
+
+int	is_bigger(char *str1, char *str2)
+{
+	int		i;
+	int		bigger;
+
+	i = 0;
+	temp = str1;
+	bigger = 0;
+	while(*str1 != '\0')
+	{
+		if(str1[i] > str2[i])
+			bigger = 1;
+	}
+	return(bigger);
+}
+
 int	main(int argc, char *argv[])
 {
-	if(argc == 2)
-		printf("%i", ft_is_prime(atoi(argv[1])));
-	return (0);
+	if (argc > 1)
+	{
+
+	}
 }
-*/

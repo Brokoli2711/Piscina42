@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elfo <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: egelma-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 15:43:39 by elfo              #+#    #+#             */
-/*   Updated: 2024/08/28 12:18:51 by egelma-b         ###   ########.fr       */
+/*   Created: 2024/08/28 13:13:22 by egelma-b          #+#    #+#             */
+/*   Updated: 2024/08/28 13:17:46 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_is_prime(int nb)
+void	ft_rev_params(char *str)
+{
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
+}
+
+int	main(int argc, char *argv[])
 {
 	int	i;
 
-	i = 1;
-	if (nb <= 1)
-		return (0);
-	while (++i <= nb)
+	i = argc;
+	if (argc > 1)
 	{
-		if ((i != nb) && (nb % i == 0))
-			return (0);
+		while (--i > 0)
+		{
+			ft_rev_params(argv[i]);
+			write(1, "\n", 1);
+		}
 	}
-	return (1);
-}
-/*
-int	main(int argc, char *argv[])
-{
-	if(argc == 2)
-		printf("%i", ft_is_prime(atoi(argv[1])));
 	return (0);
 }
-*/

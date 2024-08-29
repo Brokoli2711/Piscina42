@@ -6,64 +6,38 @@
 /*   By: elfo <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 10:47:46 by elfo              #+#    #+#             */
-/*   Updated: 2024/08/20 11:25:07 by elfo             ###   ########.fr       */
+/*   Updated: 2024/08/21 15:04:02 by egelma-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	num_len(char *str);
-int	power(char *str, int pot);
-
 int	ft_atoi(char *str)
 {
 	int	total;
-	int	len;
 	int	sign;
 
 	sign = 1;
-	len = num_len(str);
 	total = 0;
-	while (*str != '\0' && ((*str >= '0' && *str <= '9') \
-		|| (*str == '+' || *str == '-')))
+	while (*str == ' ')
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		if (*str >= '0' && *str <= '9')
-		{
-			total += power(str, len);
-			len--;
-		}
-		else if (*str == '-')
+		if (*str == '-')
 			sign *= -1;
 		str++;
 	}
-	return (total * sign);
-}
-
-int	num_len(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (*str != '\0' && ((*str >= '0' && *str <= '9') \
-		|| (*str == '+' || *str == '-')))
+	while (*str != '\0')
 	{
 		if (*str >= '0' && *str <= '9')
-			len++;
+		{
+			total = total * 10 + (*str - 48);
+		}
+		else
+			return (total * sign);
 		str++;
 	}
-	return (len);
-}
-
-int	power(char *nb, int pot)
-{
-	int	total;
-
-	total = *nb - 48;
-	while (--pot != 0)
-	{
-		total *= 10;
-	}
-	return (total);
+	return (total * sign);
 }
 
 int	main(int argc, char *argcv[])
